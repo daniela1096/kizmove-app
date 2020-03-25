@@ -5,7 +5,8 @@
     <title>Inicio</title>
 </head>
 <body>
-<h1>Inicio</h1>
+<h1>Inicio KIZMOVE</h1>
+<a th:href="@{/add}">Crear Persona</a>
 <p th:text=${mensaje}></p>
 <p th:text=${saludo}></p>
 
@@ -15,12 +16,17 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Telefono</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
 
         <tr th:each="person : ${persons}">
             <td th:text=${person.name}></td>
             <td th:text=${person.lastName}></td>
             <td th:text=${person.phoneNumber}></td>
+            <td><a th:href="@{/edit/} + ${person.id}" th:text="Editar"></a></td>
+           <!-- <td><a th:href="@{/delete/} + ${person.id}" th:text="Eliminar"></a></td> aqui es con path variable-->
+            <td><a th:href="@{/delete(id=${person.id})}" th:text="Eliminar"></a></td>
         </tr>
     </table>
 </div>
