@@ -5,7 +5,7 @@
     <title>Inicio</title>
 </head>
 <body>
-<h1>Inicio KIZMOVE</h1>
+<header th:replace="layouts/template :: header"></header>
 <a th:href="@{/add}">Crear Persona</a>
 <p th:text=${mensaje}></p>
 <p th:text=${saludo}></p>
@@ -33,5 +33,6 @@
 <div th:if="${persons ==null or persons.empty}">
     The list of people is empty!!
 </div>
+<footer th:replace="layouts/template :: footer"></footer>
 </body>
 </html>
